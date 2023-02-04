@@ -1,0 +1,73 @@
+/*styles/front/multimedia*/
+.Multimedia .thumbs{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 8px;
+    padding: 8px;
+    background: white;
+}
+
+.Multimedia .thumbs a{
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.Multimedia .thumbs a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Multimedia .navbar{
+    background: lavender;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.Multimedia .navbar img{
+    height: 25px;
+}
+
+.Multimedia .listing{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    background: white;
+    padding: 20px 0 20px 20px;
+    list-style-position: inside;
+    margin-bottom: 30px;
+}
+
+.Multimedia .listing a{
+    color: rgb(104, 104, 104);
+}
+
+.Multimedia .listing a li{
+    padding-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Multimedia .listing a li span{
+    position: relative;
+    left: -10px;
+}
+
+.Multimedia .listing a li:last-child{
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 600px){
+    .Multimedia .thumbs{
+        grid-template-columns: 100%;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
+    .Multimedia .listing{
+        grid-template-columns: 100%;
+    }
+}

@@ -1,0 +1,81 @@
+/* public/styles/front/post/css */
+.Post article{
+    background: white;
+    padding: 15px;
+}
+.Post .video{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin-bottom: 10px;
+    background: lavender;
+}
+
+.Post .video .screen div{
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.Post .video .screen div iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Post .video .playlist{
+    max-height: 410px;
+    overflow: auto;
+    padding-left: 10px;
+}
+
+.Post .video .playlist .part{
+    background: rgb(0, 0, 66);
+    text-align: center;
+    padding: 10px;
+    color: white;
+    display: block;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.Post .video .playlist .part:last-child{
+    margin-bottom: 0;
+}
+
+.Post .video .playlist .part:hover{
+    cursor: pointer;
+    opacity: .7;
+}
+
+.Post .wrapper .title{
+    font: 22px/1.5 StardosStencil, Limonf3;
+    color: black;
+}
+
+.Post .wrapper .edit img{
+    width: 30px;
+    margin-right: 5px;
+}
+
+.Post .wrapper .content{
+    column-count: 3;
+    color: rgb(85, 85, 85);
+    background: white;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 600px){
+    .Post .video{
+        grid-template-columns: 100%;
+    }
+
+    .Post .video .playlist{
+        padding: 10px 0 0;
+    }
+
+    .Post .wrapper .content{
+        column-count: 1;
+    }
+}

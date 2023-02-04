@@ -1,0 +1,65 @@
+/* public/admin/search.css */
+.Search{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+}
+
+.Search li{
+    display: grid;
+    grid-template-columns: 12% auto 10%;
+    align-items: center;
+    background: white;
+}
+
+.Search li .title{
+    color: black !important;
+}
+
+.Search li .title-outer{
+    padding-left: 10px;
+}
+
+.Search li .title{
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Search li .thumb{
+    position:relative;
+    padding-top: 56.25%;
+}
+
+.Search li .thumb img{
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.Search li .thumb .play-icon{
+    width: 30%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.Search li .edit {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.Search li .edit img{
+    float: none;
+    width: 32px;
+    visibility: hidden;
+}
+
+.Search li:hover .edit img{
+    visibility: visible;
+}

@@ -1,0 +1,77 @@
+/* public/styles/front/job.css */
+.Job .job{
+    display: grid;
+    grid-template-columns: auto 35%;
+    grid-gap: 10px;
+    background: white;
+    padding: 15px;
+}
+
+.Job .job .sidebar a{
+    border: 2px solid lightgrey;
+    padding: 10px;
+    color: black;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.Job .job .sidebar a:last-child{
+    margin-bottom: 0;
+}
+
+.Job .job .sidebar a div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Job .job .sidebar a div:nth-child(2){
+    color: var(--background);
+}
+
+.Job .job .content{
+    border: 2px solid lightgrey;
+    padding: 20px;
+    color: black;
+}
+
+.Job .job .content .title{
+    font: 22px/1.2 StardosStencil;
+    padding-bottom: 20px;
+}
+
+.Job .job .content div.payable{
+    color: var(--background);
+}
+
+.Job .job .content .job-content{
+    margin-top: 30px;
+    font: 15px/1.5 Courgette,HandWriting;
+}
+
+.Job .job .content div{
+    font-size: 16px;
+}
+
+.Job .job .content .payable{
+    display: grid;
+    grid-template-columns: auto 120px;
+    align-items: center;
+}
+
+.Job .job .content .payable a{
+    text-align: center;
+    background: var(--background);
+    color: white;
+    border-radius: 2px;
+}
+
+.Job .job .content .skill span{
+    color: var(--background);
+}
+
+@media only screen and (max-width: 600px){
+    .Job .job{
+        grid-template-columns: 100%;
+    }
+}

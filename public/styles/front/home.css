@@ -1,0 +1,198 @@
+/* public/styles/front/home.css */
+.Random .navigate{
+    padding: 6px 0 2px;
+    background: white;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.Random .navigate img{
+    height: 25px;
+}
+.Random .container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    background:white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.Random .container img{
+    width: 100%;
+    float: left;
+}
+
+.Random .container a{
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.Random .container a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Random .container a:nth-child(1) .play-icon{
+    width: 15%;
+}
+
+.Random .book{
+    display: grid;
+    grid-template-columns: calc(25% - 11.25px) calc(25% - 11.25px) 
+                           calc(25% - 11.25px) calc(25% - 11.25px);
+    grid-gap: 15px;
+    padding: 15px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.Random .book a{
+    width: 100%;
+    position: relative;
+    padding-top: 140.26%;
+}
+
+.Random .book img{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Random .book-wrapper img,
+.Random .video-wrapper img{
+    height: 30px;
+}
+
+.Random .navigate img:hover,
+.Random .book-wrapper img:hover,
+.Random .video-wrapper img:hover{
+    cursor: pointer;
+    opacity: .7;
+}
+
+.Random .video{
+    display: grid;
+    grid-template-columns: calc(25% - 7.5px) calc(25% - 7.5px) 
+                           calc(25% - 7.5px) calc(25% - 7.5px);
+    grid-gap: 10px;
+    padding: 10px;
+    background: white;
+}
+
+.Random .video a:nth-child(1){
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+}
+
+.Random .video a:nth-child(1) .play-icon{
+    width: 15%;
+}
+
+
+.Random .video a{
+    width: 100%;
+    position: relative;
+    padding-top: 56.26%;
+}
+
+.Random .video img{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Random .video .play-icon{
+    width: 20%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.Random .job-wrapper{
+    border: none;
+    margin-top: 30px;
+}
+
+.Random .job-outer{
+    background: white;
+    padding: 0 0 30px;
+}
+
+.Random .job-outer .job{
+    display: grid;
+    grid-template-columns: calc(33.33% - 6.66px) calc(33.33% - 6.66px) calc(33.33% - 6.66px);
+    grid-gap: 10px;
+}
+
+.Random .job-outer .job a{
+    border: 2px solid lightgrey;
+    padding: 10px;
+    color: black;
+}
+
+.Random .job-outer .job a div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Random .job-outer .job a div:nth-child(2){
+    color: var(--background);
+}
+
+@media only screen and (max-width: 600px){
+    .Random .book{
+        grid-template-columns: 100%;
+    }
+
+    .Random .container{
+        grid-template-columns: 100%;
+    }
+
+    .Random .listing ul{
+        grid-template-columns: 100%;
+    }
+
+    .Random .listing ul li{
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .Random .listing ul li:nth-child(2){
+        padding-left: 0;
+    }
+
+    .Random .listing ul li:last-child{
+        text-align: center;
+        left: 0;
+    }
+
+    .Random .video{
+        grid-template-columns: 100%;
+    }
+
+    .Random .video a:nth-child(1){
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .Random .video .play-icon{
+        width: 15%;
+    }
+
+    .Random .job-outer .job{
+        grid-template-columns: 100%;
+        padding: 0 20px;
+    }
+}

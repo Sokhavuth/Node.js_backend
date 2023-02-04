@@ -1,0 +1,62 @@
+/* public/styles/front/search.css */
+.Search .status{
+    text-align: center;
+    font: 18px/1.5 Limonf3;
+    background: white;
+    margin-bottom: 10px;
+    color: black;
+    padding: 7px;
+}
+.Search .search ul{
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-gap: 10px;
+}
+
+.Search .search ul li{
+    display: grid;
+    grid-template-columns: 25% calc(75% - 10px);
+    grid-gap: 10px;
+    align-items: center;
+    background: white;
+    padding-right: 10px;
+}
+
+.Search .search ul li .thumb{
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.Search .search ul li a img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    float: left;
+}
+
+.Search .search ul li a .play-icon{
+    height: auto;
+    width: 25%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.Search .search ul li .title{
+    color: rgb(94, 94, 94);
+}
+
+.Search .search ul li .title div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 600px){
+    .Search .search ul{
+        grid-template-columns:100%;
+        padding: 10px;
+    }
+}

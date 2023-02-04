@@ -1,0 +1,112 @@
+/* public/styles/book.css */
+.Book .container{
+    display: grid;
+    grid-template-columns: 29% 71%;
+}
+
+.Book .container .table-content{
+    padding: 20px;
+    background: rgb(230, 230, 230);
+    color: black;
+}
+
+.Book .container .chapter-wrapper{
+    max-height: 450px;
+    overflow: auto;
+}
+
+.Book .container .table-content .title{
+    font: 20px/1.5 Oswald, Koulen;
+    margin-bottom: 30px;
+    color: var(--background);
+}
+
+.Book .container .table-content .chapter li{
+    list-style-position: inside;
+    list-style-type: upper-alpha;
+    font: 18px/1.5 Oswald, Bayon;
+    padding-top: 10px;
+} 
+
+.Book .container .table-content .article li{
+    padding-left: 15px;
+    list-style-type: decimal;
+    font: italic 16px/1.75 StardosStencil, Limonf3;
+    list-style-position: inside;
+}
+
+.Book .container .table-content .article li a{
+    color: rgb(70, 70, 70);
+}
+
+.Book .container .content{
+    padding: 20px;
+    background: white;
+    color: rgb(70, 70, 70);
+}
+
+.Book .container .content ul, 
+.Book .container .content ol{
+    list-style-position: inside;
+}
+
+.Book .container .content .article-title{
+    font: 24px/1.5 StardosStencil, Limonf3;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 90% auto;
+    align-items: center;
+}
+
+.Book .container .content .article-title img{
+    width: 30px;
+}
+
+.Book .container .content .article-title .edit{
+    text-align: right;
+}
+
+.Book .container .content .article-body{
+    font: 14px/1.5 Courgette, HandWriting;
+    font-weight: 600;
+    color: rgb(114, 114, 114);
+}
+
+.Book .container .content .article-body a{
+    color: rgb(204, 0, 0);
+}
+
+.Book .container .content .article-body img{
+    max-width: 100%;
+}
+
+.Book .container .content pre code{
+    font: 14px/1.5  Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, Nokora;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.Book .container .content #disqus_thread{
+    padding-top: 10px;
+}
+
+.hljs-ln-numbers {
+    text-align: center;
+    color: #ccc;
+    vertical-align: top;
+    padding-right: 5px;
+}
+
+.hljs-ln-n{
+    padding-right: 10px;
+}
+
+.hljs-ln-code {
+    padding-left: 1em;
+}
+
+@media only screen and (max-width: 600px){
+    .Book .container{
+        grid-template-columns: 100%;
+    }
+}
