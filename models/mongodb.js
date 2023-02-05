@@ -1,5 +1,5 @@
 //models/mongodb.js
-//npm install mongodb
+//npm install mongodb@4.13
 //npm install dotenv
  
 import {MongoClient} from 'mongodb'
@@ -10,7 +10,7 @@ const uri = process.env.DATABASE_URI
 const client = new MongoClient(uri)
 
 try{
-    await client.connect();
+    await client.connect()
     var database = client.db('backend')
     console.log("Connect to the main database.")
 }finally{

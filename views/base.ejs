@@ -4,12 +4,15 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Express.js Web Framework</title>
+        <title><%= data.pageTitle %></title>
         <link href="/fonts/setup.css" rel="stylesheet">
         <link href="/styles/base.css" rel="stylesheet">
+        <link href="/images/siteLogo.png" rel="icon" />
         <script src="/scripts/jquery.js"></script>
     </head>
     <body>
-        <p>ស្វាគមន៍​មក​កាន់​កម្មវិធី​ Node.js</p>
+        <% if(data.route == '/backend/login'){ %>
+            <%- include('backend/login.ejs') %>
+        <% } %>
     </body>
 </html>

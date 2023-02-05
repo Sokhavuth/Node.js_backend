@@ -1,6 +1,8 @@
 //index.js
 //npm install express
 //npm install ejs
+//npm install express-session
+//npm install connect-mongo
  
 import express from 'express'
 import path from 'path'
