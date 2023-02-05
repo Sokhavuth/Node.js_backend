@@ -4,6 +4,10 @@
  
 import express from 'express'
 import path from 'path'
+import session from 'express-session'
+import MongoStore from 'connect-mongo' 
+import dotenv from 'dotenv'
+dotenv.config()
  
 const app = express()
 const port = process.env.PORT || 3000
@@ -12,6 +16,20 @@ const __dirname = path.resolve()
  
 import frontend from './routes/frontend.js'
 import backend from './routes/backend.js'
+import mydb from './models/mongodb.js'
+
+app.use('/',async function(req,res,next){
+    req.mydb = await mydb
+    req.__dirname = __dirname
+    next()
+})
+
+app.use(session({
+    store: MongoStore.create({mongoUrl:process.env.DATABASE_URI}),
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: false
+}))
  
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
