@@ -13,7 +13,8 @@ try{
     await client.connect()
     var database = client.db('backend')
     console.log("Connect to the main database.")
-}finally{
+}catch(err){
+    console.log(err.message)
     await client.close()
 }
   

@@ -16,13 +16,14 @@ const port = process.env.PORT || 3000
 process.env.TZ = "Asia/Phnom_Penh"
 const __dirname = path.resolve()
  
+import settings from './settings.js'
 import frontend from './routes/frontend.js'
 import backend from './routes/backend.js'
 import mydb from './models/mongodb.js'
 
 app.use('/',async function(req,res,next){
     req.mydb = await mydb
-    req.__dirname = __dirname
+    req.settings = settings
     next()
 })
 

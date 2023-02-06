@@ -3,7 +3,7 @@
 import express from 'express'
 const backendRouter = express.Router()
 
-import loginRoute from './backend/login.js'
-backendRouter.use('/login', loginRoute) 
+import loginRouter from './backend/login.js'
+backendRouter.use('/login', loginRouter) 
  
 export default backendRouter

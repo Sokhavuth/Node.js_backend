@@ -1,10 +1,9 @@
 //routes/frontend.js
 import express from 'express'
 const frontendRouter = express.Router()
-import settings from "../settings.js"
  
 frontendRouter.get('/',(req,res)=>{
-    res.render('base', {data:settings})
+    res.render('base', {data:req.settings})
 })
  
 export default frontendRouter
