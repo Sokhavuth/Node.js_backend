@@ -2,7 +2,7 @@
  
 let settings = {}
  
-settings.siteTitle = 'កាសែត​យើង'
+settings.siteTitle = 'Node.js'
 settings.pageTitle = ''
 settings.description = 'ព័ត៌មាន ចំណេះដឹង វប្បធម៌ កំសាន្ត'
 settings.dLogo = ''

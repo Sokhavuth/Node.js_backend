@@ -60,7 +60,7 @@
     color: grey;
 }
 
-.Listing .info{
+.Footer .info{
     background: var(--item-listing);
     color: var(--item-listing-color);
     text-align: center;
@@ -68,13 +68,13 @@
     margin: 10px 0;
 }
 
-.Listing ul{
+.Footer ul{
     display: grid;
     grid-template-columns: calc(50% - 5px ) calc(50% - 5px );
     grid-gap: 10px;
 }
 
-.Listing ul li{
+.Footer ul li{
     display: grid;
     grid-template-columns: 25% auto 20%;
     align-items: center;
@@ -82,12 +82,12 @@
     color: var(--item-listing-color);
 }
 
-.Listing ul li .thumb{
+.Footer ul li .thumb{
     position: relative;
     padding-top: 56.25%;
 }
 
-.Listing ul li .thumb a{
+.Footer ul li .thumb a{
     position: absolute;
     top: 0;
     left: 0;
@@ -95,12 +95,12 @@
     height: 100%;
 }
 
-.Listing ul li .thumb img{
+.Footer ul li .thumb img{
     width: 100%;
     height: 100%;
 }
 
-.Listing ul li .thumb .play-icon{
+.Footer ul li .thumb .play-icon{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -109,38 +109,38 @@
     transform: translate(-50%,-50%);
 }
 
-.Listing ul li .title{
+.Footer ul li .title{
     padding-left: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.Listing ul li .title a{
+.Footer ul li .title a{
     color: var(--item-listing-color);
 }
 
-.Listing ul li .edit{
+.Footer ul li .edit{
     text-align: right;
     padding-right: 10px;
     visibility: hidden;
 }
 
-.Listing ul li:hover .edit{
+.Footer ul li:hover .edit{
     visibility: visible;
 }
 
-.Listing ul li .edit img{
+.Footer ul li .edit img{
     width: 45px;
 }
 
-.Listing .paginate{
+.Footer .paginate{
     text-align: center;
     background: var(--item-listing);
     margin: 10px 0 20px;
     padding: 10px 0 5px;
 }
 
-.Listing .paginate img:hover{
+.Footer .paginate img:hover{
     cursor: pointer;
 }
