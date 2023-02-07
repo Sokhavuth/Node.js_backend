@@ -1,6 +1,7 @@
 <!--views/backend/index.ejs-->
 
 <link href="/styles/backend/index.css" rel="stylesheet">
+<script src="/scripts/backend/paginate.js"></script>
  
 <section class="Header">
     <div class="wrapper region">
@@ -51,15 +52,15 @@
     </div>
 </section>
 
-<section class="Footer region">
+<section class="Footer Listing region">
     <div class="info">សរុប​ទាំងអស់​មាន​ចំនួនៈ <%= data.count %></div>
 
-    <ul>
+    <ul class="list">
         <% if('items' in data){ %>
             <% for(let item of data.items) { %>
             <li>
                 <div class='thumb'>
-                    <a href='<%= data.route %>/<%= item.id %>'><img src='<%= item.thumb %>'/></a>
+                    <a href='/<%= data.type %>/<%= item.id %>'><img src='<%= item.thumb %>'/></a>
                     <% if('video' in item){ %>
                         <% if(item.video !== ''){ %>
                             <img class="play-icon" src="/images/play-icon"/>
@@ -67,7 +68,7 @@
                     <% } %>
                 </div>
                 <div class="title">
-                    <a href="<%= data.route %>/<%= item.id %>"><%= item.title %></a>
+                    <a href="/<%= data.type %>/<%= item.id %>"><%= item.title %></a>
                     <div><%= (new Date(item.date)).toLocaleDateString('it-IT') %></div>
                 </div>
                 <div class="edit">
@@ -79,5 +80,7 @@
         <% } %>
     </ul>
 
-    <div class="paginate"><img src='/images/load-more.png' /></div>
+    <div class="paginate">
+        <img onclick="paginate('<%= data.route %>')" src='/images/load-more.png' />
+    </div>
 </section>

@@ -1,4 +1,4 @@
-//public/scripts/admin/paginate.js
+//public/scripts/backend/paginate.js
 
 let page = 0
 
@@ -6,7 +6,7 @@ function paginate(route){
     $('.paginate img').attr('src', '/images/loading.gif')
     page += 1
     
-    $.post(`${route}/paginate/`,{page:page},function(data, status){
+    $.post(`${route}/paginate`,{page:page},function(data, status){
         appendItem(data.items,route,data)
     })
 }
