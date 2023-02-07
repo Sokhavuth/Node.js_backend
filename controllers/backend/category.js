@@ -8,6 +8,9 @@ class Category{
             req.settings.pageTitle = 'ទំព័រ​ជំពូក'
             req.settings.message = ''
             req.settings.route = '/admin/category'
+
+            req.settings.items = await category.getItem(req,req.settings.dItemLimit)
+            req.settings.count = await category.countItem(req)
   
             res.render('base', {data:req.settings})
         }else{
@@ -18,7 +21,7 @@ class Category{
     async createItem(req,res){
         if(req.session.user){
             if(req.session.user.role == 'Admin'){
-                category.createItem(req,res)
+                category.createItem(req)
             }
 
             res.redirect('/admin/category')

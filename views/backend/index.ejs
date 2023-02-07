@@ -52,9 +52,32 @@
 </section>
 
 <section class="Footer region">
-    <div class="info">សរុប​ទាំងអស់​មាន​ចំនួនៈ </div>
+    <div class="info">សរុប​ទាំងអស់​មាន​ចំនួនៈ <%= data.count %></div>
 
-    <ul class="item"></ul>
+    <ul>
+        <% if('items' in data){ %>
+            <% for(let item of data.items) { %>
+            <li>
+                <div class='thumb'>
+                    <a href='<%= data.route %>/<%= item.id %>'><img src='<%= item.thumb %>'/></a>
+                    <% if('video' in item){ %>
+                        <% if(item.video !== ''){ %>
+                            <img class="play-icon" src="/images/play-icon"/>
+                        <% } %>
+                    <% } %>
+                </div>
+                <div class="title">
+                    <a href="<%= data.route %>/<%= item.id %>"><%= item.title %></a>
+                    <div><%= (new Date(item.date)).toLocaleDateString('it-IT') %></div>
+                </div>
+                <div class="edit">
+                    <a href="<%= data.route %>/edit/<%= item.id %>"><img src="/images/edit.png"/></a>
+                    <a href="<%= data.route %>/delete/<%= item.id %>"><img src="/images/delete.png"/></a>
+                </div> 
+            </li>
+            <% } %>
+        <% } %>
+    </ul>
 
     <div class="paginate"><img src='/images/load-more.png' /></div>
 </section>
