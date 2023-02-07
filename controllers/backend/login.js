@@ -21,7 +21,7 @@ class Login{
       
         if(result){
             if(bcrypt.compareSync(req.body.password, result.password)){
-                req.session.user = result.id
+                req.session.user = { id:result.id, role:result.role }
                 res.redirect('/admin/post')
             }else{
                 req.settings.message = 'ពាក្យ​សំងាត់​មិន​ត្រឹមត្រូវ​ទេ'

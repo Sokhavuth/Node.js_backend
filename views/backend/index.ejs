@@ -44,6 +44,8 @@
         
         <% if(data.route == '/admin/post'){ %>
             <%- include('./post.ejs') %>
+        <% } else if(data.route == '/admin/category'){ %>
+            <%- include('./category.ejs') %>
         <% } %>
 
     </div>

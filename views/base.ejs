@@ -13,7 +13,7 @@
     <body>
         <% if(data.route == '/admin/login'){ %>
             <%- include('./backend/login.ejs') %>
-        <% }else if(data.route.includes('/admin/')){ %>
+        <% } else if(data.route.includes('/admin/')){ %>
             <%- include('./backend/index.ejs') %>
         <% } %>
 
