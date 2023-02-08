@@ -65,9 +65,9 @@
             <li>
                 <div class='thumb'>
                     <a href='/<%= data.type %>/<%= item.id %>'><img src='<%= item.thumb %>'/></a>
-                    <% if('video' in item){ %>
-                        <% if(item.video !== ''){ %>
-                            <img class="play-icon" src="/images/play-icon"/>
+                    <% if('videos' in item){ %>
+                        <% if((item.videos !== "") && (item.videos !== "[]")){ %>
+                            <img class="play-icon" src="/images/play.png"/>
                         <% } %>
                     <% } %>
                 </div>
