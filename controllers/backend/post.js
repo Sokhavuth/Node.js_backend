@@ -13,7 +13,7 @@ class Post{
         req.settings.categories = await category.getItem(req,'all')
         req.settings.items = await post.getItem(req,req.settings.dItemLimit)
         req.settings.count = await post.countItem(req)
-
+        
         if(req.params.id){
             req.settings.item = await post.getItem(req,req.settings.dItemLimit,req.params.id)
         }
@@ -33,13 +33,35 @@ class Post{
 
     async updateItem(req,res){
         if((req.session.user.role == "Author")||(req.session.user.role == "Admin")){
-            const postdb = await post.getItem(req)
+            const postdb = await post.getItem(req,req.settings.dItemLimit,req.params.id)
             if((req.session.user.id == postdb.userid)||(req.session.user.role == "Admin")){
                 await post.updateItem(req)
                 res.redirect("/admin/post")
             }
         }else{
             res.redirect("/admin/login")
+        }
+    }
+
+    async deleteItem(req,res){
+        if((req.session.user.role == "Author")||(req.session.user.role == "Admin")){
+            const postdb = await post.getItem(req,req.settings.dItemLimit,req.params.id)
+            if((req.session.user.id == postdb.userid)||(req.session.user.role == "Admin")){
+                await post.deleteItem(req)
+                res.redirect("/admin/post")
+            }
+        }else{
+            res.redirect("/admin/login")
+        }
+    }
+
+    async paginateItem(req,res){
+        if(req.session.user){
+            req.settings.type = 'post'
+            req.settings.items = await post.getItem(req,req.settings.dItemLimit)
+            res.json(req.settings)
+        }else{
+            res.redirect('/admin/login')
         }
     }
 }

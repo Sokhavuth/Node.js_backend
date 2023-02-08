@@ -20,4 +20,12 @@ postRouter.post('/edit/:id', async function(req,res){
     await post.updateItem(req,res)
 })
 
+postRouter.get('/delete/:id', async function(req,res){
+    await post.deleteItem(req,res)
+})
+
+postRouter.post('/paginate', async function(req,res){
+    await post.paginateItem(req,res)
+})
+
 export default postRouter

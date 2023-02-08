@@ -54,7 +54,7 @@ class Post{
         }else{
             categories = [req.body.categories]
         }
-        
+
         let newvalue = {$set: {
             title: req.body.title,
             content: req.body.content,
@@ -65,6 +65,12 @@ class Post{
         }}
      
         await req.mydb.collection("posts").updateOne(myquery,newvalue)
+    }
+
+    async deleteItem(req){
+        const myquery = {id:req.params.id}
+     
+        await req.mydb.collection("posts").deleteOne(myquery)
     }
 }
 

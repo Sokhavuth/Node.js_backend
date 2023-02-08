@@ -19,13 +19,13 @@ function appendItem(items, route,data){
             html += `<li>`
                 html += `<div class='thumb'>`
                     html += `<a href="/${data.type}/${item.id}"><img src="${item.thumb}"/></a>`
-                    if((item.video)&&(item.video !== '[]')){
+                    if((item.videos)&&(item.videos !== '[]')&&(item.videos !== '')){
                         html += `<img class="play-icon" src="/images/play.png"/>`
                     }
                 html += `</div>`
                 html += `<div class="title">`
                     html += `<a href="/${data.type}/${item.id}">${item.title}</a>`
-                    html += `<div>${new Date(item.date).toLocaleDateString()}</div>`
+                    html += `<div>${new Date(item.date).toLocaleDateString('it-IT')}</div>`
                 html += `</div>`
                 html += `<div class="edit">`
                     html += `<a href="${route}/edit/${item.id}"><img src="/images/edit.png"/></a>`
