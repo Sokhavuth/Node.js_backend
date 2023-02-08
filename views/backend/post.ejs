@@ -7,12 +7,12 @@
 
 <section class="Post">
     <% if(data.item){ %>
-    <form action="/admin/post/edit/<%= data.item.key %>" method="post" name="form" 
+    <form action="/admin/post/edit/<%= data.item.id %>" method="post" name="form" 
     onSubmit="submitForm(event)">
         <input type="text" name="title" value="<%= data.item.title %>"
         required placeholder="Title" />
         <textarea name="content" id="editor"><%= data.item.content %></textarea>
-        <input type="text" name="categories" value="<%= data.item.categories.toString() %>"
+        <input type="text" name="categories" value="<%= data.item.categories.join(', ') %>"
         required placeholder="Categories" />
         <div class="wrapper"> 
             <select id="category" onChange="getCategory()">
@@ -98,7 +98,7 @@
         $('.viddata div:eq(0)' ).after(html)
     }
     </script>
+    <% delete data.item %>
     <% } %>
-
     <script src="/scripts/ckeditor/config.js"></script>
 </section>

@@ -43,6 +43,29 @@ class Post{
             return await req.mydb.collection("posts").find().sort({date:-1,_id:-1}).limit(amount).toArray()
         }
     }
+
+    async updateItem(req){
+        const myquery = {id:req.params.id}
+        let categories = []
+
+        if(req.body.categories.includes(',')){
+            let str = req.body.categories.replace(/\s+/g, "")
+            categories = str.split(',')
+        }else{
+            categories = [req.body.categories]
+        }
+        
+        let newvalue = {$set: {
+            title: req.body.title,
+            content: req.body.content,
+            categories: categories,
+            thumb: req.body.thumb,
+            date: req.body.datetime,
+            videos: req.body.videos
+        }}
+     
+        await req.mydb.collection("posts").updateOne(myquery,newvalue)
+    }
 }
 
 export default new Post()

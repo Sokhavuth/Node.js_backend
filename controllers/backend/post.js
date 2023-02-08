@@ -13,6 +13,10 @@ class Post{
         req.settings.categories = await category.getItem(req,'all')
         req.settings.items = await post.getItem(req,req.settings.dItemLimit)
         req.settings.count = await post.countItem(req)
+
+        if(req.params.id){
+            req.settings.item = await post.getItem(req,req.settings.dItemLimit,req.params.id)
+        }
         
         res.render('base', {data:req.settings})
     }
@@ -24,6 +28,18 @@ class Post{
             res.redirect('/admin/post')
         }else{
             res.redirect('/admin/login')
+        }
+    }
+
+    async updateItem(req,res){
+        if((req.session.user.role == "Author")||(req.session.user.role == "Admin")){
+            const postdb = await post.getItem(req)
+            if((req.session.user.id == postdb.userid)||(req.session.user.role == "Admin")){
+                await post.updateItem(req)
+                res.redirect("/admin/post")
+            }
+        }else{
+            res.redirect("/admin/login")
         }
     }
 }
